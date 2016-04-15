@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <script>
+        /*
+        Generic function to attach event handlers to DOM elements
+         */
+        function attachEvent(element, index, event) {
+            element.addEventListener(event, function () {
+                console.log("This is element #" + (index + 1));
+            });
+        }
+        window.addEventListener('load', function () {
+            var elements = document.getElementsByTagName('button');
+            var n = elements.length;
+            for (var i = 0; i < n; i++) {
+                attachEvent(elements[i], i, 'click');
+            }
+        });
+    </script>
+</head>
+<body>
+<p>
+    <button>button one</button>
+</p>
+<p>
+    <button>button two</button>
+</p>
+<p>
+    <button>button three</button>
+</p>
+<p>
+    <button>button four</button>
+</p>
+
+
+</body>
+</html>
